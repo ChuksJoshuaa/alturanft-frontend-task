@@ -36,6 +36,7 @@ export interface NFTProps {
   asset_contract: AssetProps;
   creator: any;
   traits: any;
+  twitter_username: string;
 }
 
 export interface ModalProps {

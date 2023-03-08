@@ -65,8 +65,18 @@ single-button
   line-height: 1.25;
 }
 
+.click {
+  cursor: pointer;
+}
+
 @media (min-width: 776px) {
   .footer {
     flex-direction: row;
   }
+}
+
+.profile-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }

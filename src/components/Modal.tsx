@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Loader } from ".";
 import { ModalProps } from "../utils/interface";
+import { FaDiscord, FaExternalLinkAlt } from "react-icons/fa";
 
 const ModalComponent = ({
   show,
@@ -41,8 +42,11 @@ const ModalComponent = ({
                   />
                   <h5 className="card-title mt-2 text-danger">
                     {singleAsset?.name}
-                    <p className="text-secondary fs-9">
-                      {singleAsset?.collection.slug}
+                    <p
+                      className="text-secondary fw-semibold"
+                      style={{ fontSize: "0.6em" }}
+                    >
+                      {singleAsset?.creator?.address}
                     </p>
                   </h5>
 
@@ -50,7 +54,40 @@ const ModalComponent = ({
                     {singleAsset?.asset_contract?.description}
                   </p>
 
-                  <div></div>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div className="d-flex align-items-center">
+                      <div>
+                        <img
+                          src={singleAsset?.creator?.profile_img_url}
+                          alt={singleAsset?.name}
+                          className="profile-image"
+                        />
+                      </div>
+
+                      <div className="px-2 d-flex flex-column  mb-0">
+                        <p className="text-secondary fs-4 mb-0 pb-0">
+                          {singleAsset?.collection.slug}
+                        </p>
+                        <p className="text-primary fs-9">
+                          @{singleAsset?.collection?.twitter_username}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="d-flex align-items-center click">
+                      <a
+                        href={singleAsset?.collection?.discord_url}
+                        target="_blank"
+                      >
+                        <FaDiscord className="fs-4 mx-1" />
+                      </a>
+                      <a
+                        href={singleAsset?.collection?.external_url}
+                        target="_blank"
+                      >
+                        <FaExternalLinkAlt className="fs-6 text-danger click" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
