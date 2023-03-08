@@ -9,6 +9,7 @@ const ModalComponent = ({
   singleAsset,
   isFetching,
 }: ModalProps) => {
+  console.log(singleAsset);
   const LoadingComponent = () => {
     return (
       <div className="single-container">
@@ -20,7 +21,9 @@ const ModalComponent = ({
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>NFT</Modal.Title>
+        <Modal.Title style={{ fontFamily: "Lobster Two", fontSize: "1.8em" }}>
+          Alturanft
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {isFetching ? (
@@ -38,7 +41,11 @@ const ModalComponent = ({
                   />
                   <h5 className="card-title mt-2 text-danger">
                     {singleAsset?.name}
+                    <p className="text-secondary fs-9">
+                      {singleAsset?.collection.slug}
+                    </p>
                   </h5>
+
                   <p className="card-text">
                     {singleAsset?.asset_contract?.description}
                   </p>

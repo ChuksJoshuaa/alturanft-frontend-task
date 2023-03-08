@@ -30,6 +30,7 @@ export interface NFTProps {
   image_preview_url: string;
   name: string;
   permalink: string;
+  last_sale: any;
   token_id: string;
   external_link: string;
   asset_contract: AssetProps;

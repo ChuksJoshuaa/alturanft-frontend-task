@@ -58,7 +58,7 @@ const Card = () => {
                   />
                   <h5 className="card-title mt-2 text-danger">{item.name}</h5>
                   <p className="card-text">
-                    {item.asset_contract.description.slice(0, 100)}...
+                    {item.asset_contract.description.slice(0, 50)}...
                   </p>
                 </div>
               </div>
