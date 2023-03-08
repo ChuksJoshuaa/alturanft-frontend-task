@@ -13,11 +13,11 @@ export const openSeaApi = createApi({
   endpoints: (builder) => ({
     getAssets: builder.query({
       query: () =>
-        `/assets?collection_slug=cryptopunks&order_direction=desc&limit=50&include_orders=false`,
+        `/assets?collection_slug=cryptopunks&order_direction=desc&limit=6&include_orders=false`,
     }),
     getSingleAsset: builder.query({
-      query: ({ asset_contract_address, token_id }) =>
-        `/asset/${asset_contract_address}/${token_id}?include_orders=false`,
+      query: ({ getAddress, getId }) =>
+        `/asset/${getAddress}/${getId}?include_orders=false`,
     }),
   }),
 });

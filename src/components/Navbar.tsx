@@ -1,16 +1,12 @@
 import { imageLogo } from "../utils/imageLogo";
-import { useAppDispatch } from "../redux/hooks";
-import { setLoader } from "../redux/features/nft/nftSlice";
 
 const Navbar = () => {
-  const dispatch = useAppDispatch();
   return (
     <nav className="navbar bg-light p-0">
       <div className="container">
         <div
           className="d-flex justify-content-start py-2 align-items-center text-decoration-none text-secondary"
           style={{ fontFamily: "Lobster Two" }}
-          onClick={() => dispatch(setLoader(true))}
         >
           <img
             src={imageLogo}

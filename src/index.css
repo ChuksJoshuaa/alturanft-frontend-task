@@ -10,7 +10,9 @@ body {
   overflow-x: hidden;
 }
 
-a {
+a, 
+single-button
+{
   color: inherit;
   text-decoration: none;
 }
@@ -38,6 +40,10 @@ a {
   background-color: transparent;
 }
 
+.single-container {
+  font-family: "Rajdhani", sans-serif;
+}
+
 
 .footer {
   height: 5rem;
@@ -59,8 +65,18 @@ a {
   line-height: 1.25;
 }
 
+.click {
+  cursor: pointer;
+}
+
 @media (min-width: 776px) {
   .footer {
     flex-direction: row;
   }
+}
+
+.profile-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }
