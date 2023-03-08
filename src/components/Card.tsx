@@ -11,7 +11,6 @@ const Card = () => {
   const [getId, setGetId] = useState("");
   const [getAddress, setGetAddress] = useState("");
   const { data, isLoading, isError } = useGetAssetsQuery(1);
-  console.log(isError);
   const {
     data: singleAsset,
     isFetching,
@@ -42,7 +41,7 @@ const Card = () => {
     );
   }
 
-  if (isError === true) {
+  if (isError) {
     return <Error />;
   }
 
