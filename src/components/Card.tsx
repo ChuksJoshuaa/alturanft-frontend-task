@@ -6,7 +6,6 @@ import {
 import { NFTProps } from "../utils/interface";
 import { Loader } from "./";
 import { ModalComponent } from "./index";
-// import { TOKEN_ID, ASSET_CONTRACT_ADDRESS } from "../utils/constant";
 
 const Card = () => {
   const [getId, setGetId] = useState("");

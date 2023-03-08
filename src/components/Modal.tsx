@@ -42,6 +42,8 @@ const ModalComponent = ({
                   <p className="card-text">
                     {singleAsset?.asset_contract?.description}
                   </p>
+
+                  <div></div>
                 </div>
               </div>
             </div>
