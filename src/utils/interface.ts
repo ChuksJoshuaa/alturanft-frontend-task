@@ -1,7 +1,3 @@
-export interface IIProps {
-  isLoading: boolean;
-}
-
 export interface AssetProps {
   address: string;
   asset_contract_type: string;
@@ -39,4 +35,15 @@ export interface NFTProps {
   asset_contract: AssetProps;
   creator: any;
   traits: any;
+}
+
+export interface ModalProps {
+  show: boolean;
+  handleClose: any;
+  singleAsset: NFTProps;
+  isFetching: boolean;
+}
+
+export interface IIProps {
+  isLoading: boolean;
 }
