@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { Loader } from ".";
+import { Loader, Error } from ".";
 import { ModalProps } from "../utils/interface";
 import { FaDiscord, FaExternalLinkAlt } from "react-icons/fa";
 
@@ -9,6 +9,7 @@ const ModalComponent = ({
   handleClose,
   singleAsset,
   isFetching,
+  errors,
 }: ModalProps) => {
   const LoadingComponent = () => {
     return (
@@ -18,6 +19,10 @@ const ModalComponent = ({
       </div>
     );
   };
+
+  if (errors) {
+    return <Error />;
+  }
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>

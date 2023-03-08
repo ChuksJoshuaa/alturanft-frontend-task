@@ -44,6 +44,7 @@ export interface ModalProps {
   handleClose: any;
   singleAsset: NFTProps;
   isFetching: boolean;
+  errors: boolean
 }
 
 export interface IIProps {
