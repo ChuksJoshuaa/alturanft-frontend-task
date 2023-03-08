@@ -10,7 +10,6 @@ const ModalComponent = ({
   singleAsset,
   isFetching,
 }: ModalProps) => {
-  console.log(singleAsset);
   const LoadingComponent = () => {
     return (
       <div className="single-container">
