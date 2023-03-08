@@ -11,10 +11,11 @@ const Card = () => {
   const [getId, setGetId] = useState("");
   const [getAddress, setGetAddress] = useState("");
   const { data, isLoading, isError } = useGetAssetsQuery(1);
+  console.log(isError);
   const {
     data: singleAsset,
     isFetching,
-    isError: errors,
+   
   } = useGetSingleAssetQuery({
     getAddress,
     getId,
@@ -41,7 +42,7 @@ const Card = () => {
     );
   }
 
-  if (isError) {
+  if (isError === true) {
     return <Error />;
   }
 
@@ -79,7 +80,6 @@ const Card = () => {
           handleClose={handleClose}
           singleAsset={singleAsset}
           isFetching={isFetching}
-          errors={errors}
         />
       </div>
     </div>
