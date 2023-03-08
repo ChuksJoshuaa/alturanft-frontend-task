@@ -5,13 +5,17 @@ import {
 } from "../redux/services/nftRanking";
 import { NFTProps } from "../utils/interface";
 import { Loader } from "./";
-import { ModalComponent } from "./index";
+import { ModalComponent, Error } from "./index";
 
 const Card = () => {
   const [getId, setGetId] = useState("");
   const [getAddress, setGetAddress] = useState("");
-  const { data, isLoading } = useGetAssetsQuery(1);
-  const { data: singleAsset, isFetching } = useGetSingleAssetQuery({
+  const { data, isLoading, isError } = useGetAssetsQuery(1);
+  const {
+    data: singleAsset,
+    isFetching,
+    isError: errors,
+  } = useGetSingleAssetQuery({
     getAddress,
     getId,
   });
@@ -37,6 +41,10 @@ const Card = () => {
     );
   }
 
+  if (isError) {
+    return <Error />;
+  }
+
   return (
     <div className="container mt-4">
       <div>
@@ -45,7 +53,7 @@ const Card = () => {
             <div className="col-sm-4" key={item.id}>
               <div
                 className="card mb-3"
-                onClick={() =>
+                onClickCapture={() =>
                   handleShow(item.token_id, item.asset_contract.address)
                 }
               >
@@ -71,6 +79,7 @@ const Card = () => {
           handleClose={handleClose}
           singleAsset={singleAsset}
           isFetching={isFetching}
+          errors={errors}
         />
       </div>
     </div>
