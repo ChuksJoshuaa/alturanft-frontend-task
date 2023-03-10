@@ -57,7 +57,10 @@ const ModalComponent = ({
                     <div className="d-flex align-items-center">
                       <div>
                         <img
-                          src={singleAsset?.creator?.profile_img_url}
+                          src={
+                            singleAsset?.creator?.profile_img_url ||
+                            singleAsset?.collection?.banner_image_url
+                          }
                           alt={singleAsset?.name}
                           className="profile-image"
                         />
