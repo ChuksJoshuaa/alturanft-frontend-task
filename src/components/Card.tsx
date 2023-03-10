@@ -11,11 +11,7 @@ const Card = () => {
   const [getId, setGetId] = useState("");
   const [getAddress, setGetAddress] = useState("");
   const { data, isLoading, isError } = useGetAssetsQuery(1);
-  const {
-    data: singleAsset,
-    isFetching,
-   
-  } = useGetSingleAssetQuery({
+  const { data: singleAsset, isFetching } = useGetSingleAssetQuery({
     getAddress,
     getId,
   });
@@ -26,9 +22,7 @@ const Card = () => {
     setGetId(id);
     setGetAddress(address);
 
-    if (singleAsset !== undefined) {
-      setShow(true);
-    }
+    setShow(true);
   };
 
   const postData = data?.assets;
